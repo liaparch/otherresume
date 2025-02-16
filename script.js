@@ -1,6 +1,6 @@
 const typingText = [
     
-    "I am Excited To Join Your Team...! ",
+    "I am Excited To Intern at Your Company...! ",
    
     "I am a multitasking student...",
 
