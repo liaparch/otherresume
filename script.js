@@ -1,6 +1,6 @@
 const typingText = [
     
-    "I am Excited To Join Your Company...! ",
+    "I am Excited To Join Your Team...! ",
    
     "I am a multitasking student...",
 
@@ -78,4 +78,5 @@ startBtn.addEventListener("click", () => {
 
 
 typeText();
+
 
