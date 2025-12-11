@@ -60,6 +60,7 @@ startBtn.addEventListener("click", () => {
 
     // show the details
     detailsElement.classList.remove("hidden");
+    detailsElement.classList.add("fade-in");
 
     // OPTIONAL: hide the whole intro typing section if you want
     if (introSection) {
@@ -71,4 +72,5 @@ startBtn.addEventListener("click", () => {
 });
 
 typeText();
+
 
