@@ -75,6 +75,9 @@ p {
 
 }
 
+.fade-in {
+    animation: fadeIn 1.5s ease-in-out;
+}
 
 
 button {
@@ -112,8 +115,6 @@ button:hover {
 .hidden {
 
     display: none;
-
-    animation: fadeIn 1.5s ease-in-out;
 
 }
 
@@ -188,4 +189,5 @@ ul li {
     }
 
 }
+
 
