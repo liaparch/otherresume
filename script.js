@@ -10,50 +10,65 @@ const typingElement = document.getElementById("typing");
 const detailsElement = document.getElementById("details");
 const startBtn = document.getElementById("startBtn");
 
+// OPTIONAL: if you wrap the typing + button in a div, give it this id:
+const introSection = document.getElementById("introSection");
+
 let charIndex = 0;
 let lineIndex = 0;
 
-// NEW FLAG — this lets us stop the typing when button is clicked
-let typingStopped = false;
+let typingStopped = false;       // flag to stop logic
+let typingTimeoutId = null;      // track the current timeout
 
 function typeText() {
-    // Stop typing immediately if user clicked the button
-    if (typingStopped) return;
+    if (typingStopped) return;   // hard stop
 
     if (lineIndex < typingText.length) {
         if (charIndex < typingText[lineIndex].length) {
             typingElement.textContent += typingText[lineIndex].charAt(charIndex);
             charIndex++;
-            setTimeout(typeText, 50);
+
+            // store timeout id so we can clear it later
+            typingTimeoutId = setTimeout(typeText, 50);
         } else {
             charIndex = 0;
             lineIndex++;
-            setTimeout(() => {
-                if (!typingStopped) typingElement.textContent = "";
-                typeText();
+
+            typingTimeoutId = setTimeout(() => {
+                if (!typingStopped) {
+                    typingElement.textContent = "";
+                    typeText();
+                }
             }, 2000);
         }
     } else {
+        // finished typing all lines
         startBtn.style.display = "block";
     }
 }
 
 startBtn.addEventListener("click", () => {
-    // Stop the typing animation
+    // stop any future typing
     typingStopped = true;
 
-    // Hide the button
+    // cancel the scheduled timeout, if any
+    if (typingTimeoutId !== null) {
+        clearTimeout(typingTimeoutId);
+    }
+
+    // hide the button
     startBtn.style.display = "none";
 
-    // Show extra details
+    // show the details
     detailsElement.classList.remove("hidden");
 
-    // Optional: clear the typing text if you don't want it to stay visible
+    // OPTIONAL: hide the whole intro typing section if you want
+    if (introSection) {
+        introSection.style.display = "none";
+    }
+
+    // or just clear the text:
     // typingElement.textContent = "";
 });
 
 typeText();
-
-
-
 
