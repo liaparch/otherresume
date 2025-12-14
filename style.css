@@ -38,24 +38,6 @@ body {
 }
 
 
-.project {
-  margin-top: 20px;
-  padding: 15px;
-  background: white;
-  border-radius: 8px;
-  text-align: left;
-}
-
-.project a {
-  color: #1439db;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.project a:hover {
-  text-decoration: underline;
-}
-
 
 h1, h2  {
 
@@ -241,6 +223,7 @@ ul li {
 .project-card a:hover {
   text-decoration: underline;
 }
+
 
 
 
