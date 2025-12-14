@@ -223,6 +223,20 @@ ul li {
 .project-card a:hover {
   text-decoration: underline;
 }
+.project-card:hover {
+  transform: translateY(-3px);
+  transition: transform 0.2s ease;
+}
+.project-card a {
+  color: #1439db;
+  font-size: 1.05em;
+}
+#projects h2 {
+  margin-bottom: 25px;
+}
+
+
+
 
 
 
