@@ -10,7 +10,7 @@ const typingElement = document.getElementById("typing");
 const detailsElement = document.getElementById("details");
 const startBtn = document.getElementById("startBtn");
 
-// OPTIONAL: if you wrap the typing + button in a div, give it this id:
+//  typing + button div id:
 const introSection = document.getElementById("introSection");
 
 let charIndex = 0;
@@ -27,7 +27,7 @@ function typeText() {
             typingElement.textContent += typingText[lineIndex].charAt(charIndex);
             charIndex++;
 
-            // store timeout id so we can clear it later
+            // store timeout id so it can be cleared later
             typingTimeoutId = setTimeout(typeText, 50);
         } else {
             charIndex = 0;
@@ -72,5 +72,6 @@ startBtn.addEventListener("click", () => {
 });
 
 typeText();
+
 
 
